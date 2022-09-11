@@ -35,9 +35,7 @@
       </h1>
       <form>
         <label>Eesnimi:</label>
-        <input id="num1" type="text" />
-        <label>Perekonna nimi:</label>
-        <input id="num2" type="text" />
+        <input id="num1" type="string" />
         <input type="submit" value="Add"/>
       </form>
       <div class="result">Tulemus kuvatakse siin!</div>
@@ -50,8 +48,7 @@
     function sendData(e) {
       e.preventDefault();
       const a = document.querySelector("#num1").value;
-      const b = document.querySelector("#num2").value;
-
+      
       fetch("/add", {
         method: "POST",
         headers: {
@@ -59,16 +56,15 @@
           "Content-Type": "application/json"
         },
         body: JSON.stringify({
-          a: String(a),
-          b: String(b)
+          a: String(a)
         })
       })
         .then(res => res.json())
         .then(data => {
-          const { result } = data;
+          const { a } = data;
           document.querySelector(
             ".result"
-          ).innerText = `Tere: ${result}`;
+          ).innerText = `Tere: ${a}`;
         })
     }
   </script>

@@ -13,9 +13,9 @@ app.get("/", (req, res) => {
 
 app.post("/add", (req, res) => {
   const { a } = req.body;
-  res.send({
-    result: String(a)
+    res.send(`The sum is: ${a}`);
   });
-});
+
+ 
 
 app.listen(process.env.PORT || 2000)
