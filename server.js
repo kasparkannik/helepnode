@@ -1,4 +1,4 @@
-var PORT = process.env.PORT || 2000;
+
 const path = require("path");
 const express = require("express");
 const bodyParser = require("body-parser");
@@ -18,6 +18,4 @@ app.post("/add", (req, res) => {
   });
 });
 
-app.listen(2000, () => {
-  console.log(`Server is running on port 2000.`);
-});
+app.listen(process.env.PORT || 2000)
