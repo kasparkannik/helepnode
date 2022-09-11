@@ -1,3 +1,4 @@
+var PORT = process.env.PORT || 2000;
 const path = require("path");
 const express = require("express");
 const bodyParser = require("body-parser");
