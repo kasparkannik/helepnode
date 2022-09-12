@@ -22,5 +22,5 @@ app.post('/add', function(req, res){
 });
 
 app.listen(5000,() => {
-console.log("jookseb :5000");
+console.log("Started on PORT 5000");
 })
