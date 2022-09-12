@@ -38,7 +38,7 @@
         <input id="num1" type="string" />
         <input type="submit" value="Add"/>
       </form>
-      <div class="result">Tulemus kuvatakse siin!</div>
+     <!-- <div class="result">Tulemus kuvatakse siin!</div>-->
     </div>
   </body>
 </html>
@@ -47,7 +47,7 @@
     document.addEventListener("submit", sendData);
     function sendData(e) {
       e.preventDefault();
-      const a = document.querySelector("#num1").value;
+      const name = document.querySelector("#num1").value;
       
       fetch("/add", {
         method: "POST",
@@ -56,15 +56,15 @@
           "Content-Type": "application/json"
         },
         body: JSON.stringify({
-          a: String(a)
+          name: String(name)
         })
       })
         .then(res => res.json())
         .then(data => {
-          const { a } = data;
+          const { result } = data;
           document.querySelector(
             ".result"
-          ).innerText = `Tere: ${a}`;
+          ).innerText = `Tere: ${result}`;
         })
     }
   </script>

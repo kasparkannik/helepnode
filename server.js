@@ -12,10 +12,10 @@ app.get("/", (req, res) => {
 });
 
 app.post("/add", (req, res) => {
-  const { a } = req.body;
-    res.send(`The sum is: ${a}`);
+  const { name } = req.body;
+    res.send(`Tere: ${name}`);
   });
 
  
 
-app.listen(process.env.PORT || 2000)
+app.listen(process.env.PORT || 5000)
