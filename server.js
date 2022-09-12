@@ -21,6 +21,6 @@ app.post('/add', function(req, res){
      res.send(response);
 });
 
-app.listen(5000,() => {
-console.log("jookseb :5000");
+app.listen(process.env.PORT || 80,() => {
+console.log("jookseb");
 })
