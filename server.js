@@ -1,5 +1,3 @@
-var PORT = process.env.PORT || 5000;
-
 const path = require("path");
 const express = require("express");
 const bodyParser = require("body-parser");
@@ -16,3 +14,5 @@ app.post("/add", (req, res) => {
   const { name } = req.body;
     res.send(`Tere: ${name}`);
   });
+
+  app.listen(process.env.PORT || 5000)
